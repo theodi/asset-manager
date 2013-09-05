@@ -28,7 +28,7 @@ describe "Asset requests" do
         description: "My cat is lovely",
         creator: "A N Other",
         subject: %w{cat kitty},
-        license: "CC BY 3.0",
+        license: "cc-by",
         spatial: {"lat" => 42.0, "lng" => 23.0},
       }
       
