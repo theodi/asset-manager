@@ -17,6 +17,7 @@ FactoryGirl.define do
     source      "http://catgifs.com/42"
     description "My cat is lovely"
     creator     "A N Other"
+    attribution "Stormageddon, Dark Lord of All"
     subject     %w{cat kitty}
     license     "cc-by"
     spatial     lat: 42, lng: 23

@@ -11,6 +11,7 @@ class Asset
   field :source,           type: String
   field :description,      type: String
   field :creator,          type: String
+  field :attribution,      type: String
   field :subject,          type: Array
   field :license,          type: String
   field :spatial,          type: Array,  spacial: true

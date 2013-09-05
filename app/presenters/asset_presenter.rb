@@ -19,6 +19,7 @@ class AssetPresenter
       :source         => @asset.source,
       :description    => @asset.description,
       :creator        => @asset.creator,
+      :attribution    => @asset.attribution,
       :subject        => @asset.subject,
       :license        => @asset.license,
       :spatial        => @asset.spatial,
