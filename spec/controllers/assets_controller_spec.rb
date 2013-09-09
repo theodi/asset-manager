@@ -57,6 +57,49 @@ describe AssetsController do
     end
   end
 
+  describe "PUT update" do
+      
+    context "an existing asset" do
+
+      before do
+        @asset = FactoryGirl.create(:clean_asset)
+        @atts = { id: @asset.id, creator: "Bob", subject: %w{one two}, spatial: {lat: 1, lng: 2} }
+      end
+
+      it "is updated" do
+        @asset.creator.should be_nil
+        @asset.subject.should be_nil
+        @asset.spatial.should == {lat: nil, lng: nil}
+        
+        put :update, asset: @atts
+
+        asset = Asset.find(@atts[:id])
+        asset.creator.should == "Bob"
+        asset.subject.should == %w{one two}
+        asset.spatial.should == {lat: 1, lng: 2}
+      end
+
+      it "returns an OK status" do
+        put :update, asset: @atts
+
+        response.status.should == 200
+      end
+
+    end
+
+    context "an unknown asset" do
+      before do
+        @atts = { id: 'spang', creator: "Bob", subject: %w{one two}, spatial: {lat: 1, lng: 2} }
+      end
+
+      it "returns a not found status" do
+        put :update, asset: @atts
+
+        response.status.should == 404
+      end
+    end
+  end
+
   describe "GET show" do
     context "an asset which exists" do
       before do
