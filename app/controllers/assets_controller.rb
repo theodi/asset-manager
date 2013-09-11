@@ -17,6 +17,15 @@ class AssetsController < ApplicationController
     end
   end
 
+  def update
+    @asset = Asset.find(params[:id])
+    if @asset && @asset.update_attributes(params[:asset])
+      render :json => AssetPresenter.new(@asset, view_context).as_json(:status => :updated)
+    else
+      error 404
+    end
+  end
+
 private
   def restrict_request_format
     request.format = :json
