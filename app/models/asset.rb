@@ -3,9 +3,18 @@ require 'virus_scanner'
 class Asset
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Spacial::Document
 
-  field :file, type: String
-  field :state, type: String, default: 'unscanned'
+  field :file,             type: String
+  field :state,            type: String, default: 'unscanned'
+  field :title,            type: String
+  field :source,           type: String
+  field :description,      type: String
+  field :creator,          type: String
+  field :attribution,      type: String
+  field :subject,          type: Array
+  field :license,          type: String
+  field :spatial,          type: Array,  spacial: true
 
   validates :file, presence: true
 
