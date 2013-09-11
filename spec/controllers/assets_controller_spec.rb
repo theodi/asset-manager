@@ -63,7 +63,7 @@ describe AssetsController do
 
       before do
         @asset = FactoryGirl.create(:clean_asset)
-        @atts = { id: @asset.id, creator: "Bob", subject: %w{one two}, spatial: {lat: 1, lng: 2} }
+        @atts = { id: @asset.id, asset: {creator: "Bob", subject: %w{one two}, spatial: {lat: 1, lng: 2} }}
       end
 
       it "is updated" do
@@ -71,7 +71,7 @@ describe AssetsController do
         @asset.subject.should be_nil
         @asset.spatial.should == {lat: nil, lng: nil}
         
-        put :update, asset: @atts
+        put :update, @atts
 
         asset = Asset.find(@atts[:id])
         asset.creator.should == "Bob"
@@ -80,7 +80,7 @@ describe AssetsController do
       end
 
       it "returns an OK status" do
-        put :update, asset: @atts
+        put :update, @atts
 
         response.status.should == 200
       end
@@ -89,11 +89,11 @@ describe AssetsController do
 
     context "an unknown asset" do
       before do
-        @atts = { id: 'spang', creator: "Bob", subject: %w{one two}, spatial: {lat: 1, lng: 2} }
+        @atts = { id: 'spang', asset: {creator: "Bob", subject: %w{one two}, spatial: {lat: 1, lng: 2} }}
       end
 
       it "returns a not found status" do
-        put :update, asset: @atts
+        put :update, @atts
 
         response.status.should == 404
       end
