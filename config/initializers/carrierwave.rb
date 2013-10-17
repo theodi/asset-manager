@@ -8,14 +8,14 @@ CarrierWave.configure do |config|
   config.fog_directory = ENV['QUIRKAFLEEG_ASSET_MANAGER_RACKSPACE_CONTAINER']
 end
 
-if Rails.env.test? or Rails.env.cucumber?
+if Rails.env.test? || Rails.env.cucumber?
   CarrierWave.configure do |config|
     config.storage = :file
     config.enable_processing = false
   end
 end
 
-if Rails.env.development? or Rails.env.production?
+if Rails.env.development? || Rails.env.production?
   CarrierWave.configure do |config|
     config.storage = :fog
   end
