@@ -2,6 +2,9 @@
 
 class AssetUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
+  include CarrierWave::MimeTypes
+
+  process :set_content_type
   
   def store_dir
     id = model.id.to_s
@@ -58,7 +61,7 @@ class AssetUploader < CarrierWave::Uploader::Base
   protected
 
   def image?(file)
-    file.content_type.start_with? 'image' rescue false # If no content type is specified
+    file.content_type.start_with? 'image'
   end
 
 end
