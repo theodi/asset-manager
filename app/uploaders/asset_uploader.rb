@@ -51,5 +51,15 @@ class AssetUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  
+  version :square, :if => :image? do
+    process :resize_to_fit => [300,300]
+  end
+  
+  protected
+
+  def image?(file)
+    file.content_type.start_with? 'image' rescue false # If no content type is specified
+  end
 
 end
