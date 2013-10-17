@@ -1,9 +1,8 @@
 # encoding: utf-8
 
 class AssetUploader < CarrierWave::Uploader::Base
-
-  storage :fog
-
+  include CarrierWave::MiniMagick
+  
   def store_dir
     id = model.id.to_s
     # We use chars 2-5 of the timestamp portion of the BSON id (see http://docs.mongodb.org/manual/core/object-id/)
