@@ -1,9 +1,11 @@
 # encoding: utf-8
 
 class AssetUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+  include CarrierWave::MimeTypes
 
-  storage :fog
-
+  process :set_content_type
+  
   def store_dir
     id = model.id.to_s
     # We use chars 2-5 of the timestamp portion of the BSON id (see http://docs.mongodb.org/manual/core/object-id/)
@@ -51,5 +53,15 @@ class AssetUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  
+  version :square, :if => :image? do
+    process :resize_to_fit => [300,300]
+  end
+  
+  protected
+
+  def image?(file)
+    file.content_type.start_with? 'image'
+  end
 
 end

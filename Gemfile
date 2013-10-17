@@ -26,6 +26,8 @@ gem 'state_machine', '1.1.2'
 gem 'delayed_job', '3.0.5'
 gem 'delayed_job_mongoid', '1.1.0'
 
+gem 'mini_magick'
+
 if ENV['BUNDLE_DEV']
   gem 'gds-sso', path: '../gds-sso'
 else

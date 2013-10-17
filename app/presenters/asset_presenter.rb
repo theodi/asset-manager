@@ -14,6 +14,7 @@ class AssetPresenter
       :name           => @asset.file.to_s.split('/').last,
       :content_type   => asset_mime_type.to_s,
       :file_url       => @asset.file_url,
+      :file_versions  => @asset.file_versions,
       :state          => @asset.state,
       :title          => @asset.title,
       :source         => @asset.source,

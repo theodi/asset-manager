@@ -50,6 +50,14 @@ class Asset
     file.url
   end
   
+  def file_versions
+    versions = {}
+    file.versions.each do |k,v|
+      versions[k] = v.url
+    end
+    versions
+  end
+  
   private
 
   def reset_state_if_file_changed
