@@ -26,7 +26,7 @@ describe MediaController do
 
       it "should redirect to the correct location" do
         do_get
-        response.headers["Location"].should == @asset.file.to_s
+        response.headers["Location"].should == "http://test.host" + @asset.file.to_s
       end
     end
 

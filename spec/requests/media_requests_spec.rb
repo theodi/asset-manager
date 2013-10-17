@@ -23,7 +23,7 @@ describe "Media requests" do
     end
 
     it "should redirect to the correct location" do
-      response.headers["Location"].should == @asset.file.to_s
+      response.headers["Location"].should == "http://www.example.com" + @asset.file.to_s
     end
   end
 end
