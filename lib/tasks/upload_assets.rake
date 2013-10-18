@@ -20,9 +20,9 @@ namespace :assets do
       
         dir.files.create :key => filename, :body => body
       rescue
-        puts "WTF? Couldn't find the file at #{origin}"
+        puts "Couldn't find the file at #{origin}"
       end
-      asset.file.recreate_versions! rescue puts "WTF? Can't create new versions for #{asset.file}"
+      asset.file.recreate_versions! rescue puts "Can't create new versions for #{asset.file}"
     end 
   end
 end
