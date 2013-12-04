@@ -4,7 +4,7 @@ source 'https://BnrJb6FZyzspBboNJzYZ@gem.fury.io/govuk/'
 #ruby=ruby-1.9.3
 #ruby-gemset=asset-manager
 
-gem 'rails', '~> 3.2.13'
+gem 'rails', '~> 3.2.16'
 gem 'mongoid', '2.4.12'
 gem 'mongoid_spacial'
 gem 'bson_ext', '1.6.4'
