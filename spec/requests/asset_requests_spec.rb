@@ -4,6 +4,7 @@ describe "Asset requests" do
   before(:each) do
     login_as_stub_user
     Plek.any_instance.stub(:asset_root).and_return("http://assets.digital.cabinet-office.gov.uk")
+    Plek.any_instance.stub(:find).and_return("http://asset-manager.dev")
   end
 
   describe "uploading an asset" do
@@ -65,6 +66,7 @@ describe "Asset requests" do
       body["name"].should == "asset.png"
       body["content_type"].should == "image/png"
       body["file_url"].should include "#{asset.id}/asset.png"
+      body["file_url"].should include "http://"
       body["state"].should == "clean"
     end
 
@@ -81,6 +83,7 @@ describe "Asset requests" do
       body["name"].should == "asset.png"
       body["content_type"].should == "image/png"
       body["file_url"].should include "#{asset.id}/asset.png"
+      body["file_url"].should include "http://"
       body["state"].should == "infected"
     end
 
