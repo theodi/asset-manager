@@ -58,7 +58,7 @@ describe AssetsController do
   end
 
   describe "PUT update" do
-      
+
     context "an existing asset" do
 
       before do
@@ -70,7 +70,7 @@ describe AssetsController do
         @asset.creator.should be_nil
         @asset.subject.should be_nil
         @asset.spatial.should == {lat: nil, lng: nil}
-        
+
         put :update, @atts
 
         asset = Asset.find(@atts[:id])
@@ -132,6 +132,34 @@ describe AssetsController do
 
         body = JSON.parse(response.body)
         body['_response_info']['status'].should == "not found"
+      end
+    end
+
+    describe "cache headers" do
+      it "sets the cache-control headers to 0 for an unscanned asset" do
+        pending "We don't have virus scanning yet"
+        asset = FactoryGirl.create(:asset, :state => 'unscanned')
+        get :show, id: asset.id
+
+        response.headers["Cache-Control"].should == "max-age=0, public"
+      end
+
+      it "sets the cache-control headers to 30 minutes for a clean asset" do
+        asset = FactoryGirl.create(:asset)
+        asset.scanned_clean!
+        get :show, id: asset.id
+
+        response.headers["Cache-Control"].should == "max-age=1800, public"
+      end
+
+      it "sets the cache-control headers to 30 minutes for an infected asset" do
+        pending "We don't have virus scanning yet"
+
+        asset = FactoryGirl.create(:asset)
+        asset.scanned_infected!
+        get :show, id: asset.id
+
+        response.headers["Cache-Control"].should == "max-age=1800, public"
       end
     end
   end
