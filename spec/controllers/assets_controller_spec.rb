@@ -58,7 +58,7 @@ describe AssetsController do
   end
 
   describe "PUT update" do
-      
+
     context "an existing asset" do
 
       before do
@@ -70,7 +70,7 @@ describe AssetsController do
         @asset.creator.should be_nil
         @asset.subject.should be_nil
         @asset.spatial.should == {lat: nil, lng: nil}
-        
+
         put :update, @atts
 
         asset = Asset.find(@atts[:id])
@@ -137,6 +137,7 @@ describe AssetsController do
 
     describe "cache headers" do
       it "sets the cache-control headers to 0 for an unscanned asset" do
+        pending "We don't have virus scanning yet"
         asset = FactoryGirl.create(:asset, :state => 'unscanned')
         get :show, id: asset.id
 
@@ -152,6 +153,8 @@ describe AssetsController do
       end
 
       it "sets the cache-control headers to 30 minutes for an infected asset" do
+        pending "We don't have virus scanning yet"
+
         asset = FactoryGirl.create(:asset)
         asset.scanned_infected!
         get :show, id: asset.id
