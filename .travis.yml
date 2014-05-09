@@ -1,0 +1,27 @@
+language: ruby
+services:
+- mongodb
+rvm:
+- 1.9.3
+after_success:
+- ! '[ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] &&
+  curl -v -X DELETE -u $GITHUB_USER:$GITHUB_PASSWORD "https://api.github.com/repos/$TRAVIS_REPO_SLUG/git/refs/tags/CURRENT"'
+- ! '[ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] &&
+  curl -v -X POST -d ''{"ref":"refs/tags/CURRENT","sha":"''$TRAVIS_COMMIT''"}''  --header
+  "Content-Type:application/json" -u $GITHUB_USER:$GITHUB_PASSWORD "https://api.github.com/repos/$TRAVIS_REPO_SLUG/git/refs"'
+branches:
+  except:
+  - CURRENT
+notifications:
+  email: false
+  irc:
+    channels:
+    - irc.freenode.net#theodi
+    template:
+    - ! '%{repository} %{branch} - %{message} %{build_url}'
+    on_success: change
+    on_failure: always
+env:
+  global:
+  - secure: IVcqbNWz69PegpBaCIg0PsKoqhTzafmcQy38PUXceEkOA9LveQ+/G9LiQljtvOLxMBRBULv4ubcQfhli0by2m2cJYVriJ1Zov52U9ISdI93SaagdLh6QX3hVFzHIL4DAetw14ujj2CoMlAN2u49Uwry7AlUBowUxB8dYVnHdqa8=
+  - secure: HbJmtwkt5R61kWQybg7e1Xj27jiW6g8+xaZN3LyY6chZGxTjlxBLKxEuWASogcNoYFmhmhAvz+PuC/ePy0k8aLd1hFvmb2HKIdTCwKvxSSAr8klM68INo14CyWfefHuFnqrLcsQv2S1dqrHDpJIxRKl3RDFwyrz3F3zxdhDqUdQ=

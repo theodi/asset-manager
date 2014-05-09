@@ -21,8 +21,6 @@ gem 'carrierwave'
 gem 'carrierwave-mongoid', '0.2.1', :require => 'carrierwave/mongoid'
 gem 'fog', '>= 1.16.0'
 
-gem 'pry'
-
 gem 'state_machine', '1.1.2'
 
 gem 'delayed_job', '3.0.5'
