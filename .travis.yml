@@ -23,5 +23,5 @@ notifications:
     on_failure: always
 env:
   global:
-  - secure: ZYIV154biUCYa6mYn7haS8msa3kXrgEa5AxFiNDRtI2iqpbtyExHKs1mua4gUgjYg5GIKk7dfPiXg0bCySvvuk3a/Mc5ZGK+2vSoAEUlTrU9JopL/mKh4AyVLzsM684yom+Nw17RekIHZBg+2/dknSm+Fmn7uLMzz0IugnEg1GA=
   - secure: IVcqbNWz69PegpBaCIg0PsKoqhTzafmcQy38PUXceEkOA9LveQ+/G9LiQljtvOLxMBRBULv4ubcQfhli0by2m2cJYVriJ1Zov52U9ISdI93SaagdLh6QX3hVFzHIL4DAetw14ujj2CoMlAN2u49Uwry7AlUBowUxB8dYVnHdqa8=
+  - secure: HbJmtwkt5R61kWQybg7e1Xj27jiW6g8+xaZN3LyY6chZGxTjlxBLKxEuWASogcNoYFmhmhAvz+PuC/ePy0k8aLd1hFvmb2HKIdTCwKvxSSAr8klM68INo14CyWfefHuFnqrLcsQv2S1dqrHDpJIxRKl3RDFwyrz3F3zxdhDqUdQ=
