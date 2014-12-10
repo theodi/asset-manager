@@ -11,7 +11,7 @@ gem 'bson_ext', '1.6.4'
 
 gem 'dotenv-rails'
 
-gem 'foreman'
+gem 'foreman', '< 0.65.0'
 gem 'thin'
 
 gem 'exception_notification', '2.6.1'
