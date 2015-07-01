@@ -49,7 +49,7 @@ GEM
     ci_reporter (1.8.4)
       builder (>= 2.1.2)
     coderay (1.1.0)
-    daemons (1.2.2)
+    daemons (1.2.3)
     database_cleaner (0.9.1)
     delayed_job (3.0.5)
       activesupport (~> 3.0)
@@ -108,7 +108,7 @@ GEM
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
-    fog-brightbox (0.7.1)
+    fog-brightbox (0.7.2)
       fog-core (~> 1.22)
       fog-json
       inflecto (~> 0.0.2)
@@ -119,7 +119,7 @@ GEM
       mime-types
       net-scp (~> 1.1)
       net-ssh (>= 2.1.3)
-    fog-ecloud (0.2.0)
+    fog-ecloud (0.3.0)
       fog-core
       fog-xml
     fog-google (0.0.6)
