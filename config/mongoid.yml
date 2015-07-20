@@ -1,10 +1,10 @@
 development:
-  host: localhost
+  host: <%= ENV['MONGOID_HOST'] ||= "localhost" %>
   database: govuk_assets_development
   persist_in_safe_mode: true
 
 test:
-  host: localhost
+  host: <%= ENV['MONGOID_HOST'] ||= "localhost" %>
   database: govuk_assets_test
 
 # set these environment variables on your prod server
