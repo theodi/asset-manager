@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'https://BnrJb6FZyzspBboNJzYZ@gem.fury.io/govuk/'
 
 #ruby=ruby-1.9.3
 #ruby-gemset=asset-manager
@@ -31,7 +30,7 @@ gem 'mini_magick'
 if ENV['BUNDLE_DEV']
   gem 'gds-sso', path: '../gds-sso'
 else
-  gem 'gds-sso', '3.0.0'
+  gem 'gds-sso', '3.0.5'
 end
 
 gem 'plek', '1.4.0'
