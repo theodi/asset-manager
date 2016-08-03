@@ -48,7 +48,7 @@ GEM
     ci_reporter (1.8.4)
       builder (>= 2.1.2)
     coderay (1.1.1)
-    daemons (1.2.3)
+    daemons (1.2.4)
     database_cleaner (0.9.1)
     delayed_job (3.0.5)
       activesupport (~> 3.0)
@@ -147,7 +147,7 @@ GEM
       multi_json (~> 1.10)
     fog-local (0.3.0)
       fog-core (~> 1.27)
-    fog-openstack (0.1.8)
+    fog-openstack (0.1.10)
       fog-core (>= 1.40)
       fog-json (>= 1.0)
       ipaddress (>= 0.8)
@@ -193,7 +193,7 @@ GEM
     fog-voxel (0.1.0)
       fog-core
       fog-xml
-    fog-vsphere (0.8.0)
+    fog-vsphere (1.0.0)
       fog-core
       rbvmomi (~> 1.8)
     fog-xenserver (0.2.3)
@@ -329,7 +329,7 @@ GEM
       polyglot (>= 0.3.1)
     trollop (2.1.2)
     tzinfo (0.3.51)
-    uglifier (3.0.0)
+    uglifier (3.0.1)
       execjs (>= 0.3.0, < 3)
     warden (1.2.6)
       rack (>= 1.0)
