@@ -49,6 +49,6 @@ group :development, :test do
   gem "pry"
 end
 
-gem :production do
+group :production do
   gem "rails_12factor"
 end
