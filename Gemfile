@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-#ruby=ruby-1.9.3
-#ruby-gemset=asset-manager
+ruby "1.9.3"
 
 gem 'rails', '~> 3.2.16'
 gem 'mongoid', '2.4.12'
@@ -48,4 +47,8 @@ group :development, :test do
 
   gem "factory_girl_rails", "~> 4.0"
   gem "pry"
+end
+
+group :production do
+  gem "rails_12factor"
 end
