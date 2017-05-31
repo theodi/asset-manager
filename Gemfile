@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby "1.9.3"
 
-gem 'rails', '~> 3.2.16'
+gem 'rails', '~> 3.2.22'
 gem 'mongoid', '2.4.12'
 gem 'mongoid_spacial'
 gem 'bson_ext', '1.6.4'
