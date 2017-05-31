@@ -35,7 +35,7 @@ end
 gem 'plek', '1.4.0'
 
 group :assets do
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier', '>= 3.2.0'
 end
 
 group :development, :test do
