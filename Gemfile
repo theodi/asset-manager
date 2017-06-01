@@ -40,7 +40,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '2.12.2'
-  gem 'database_cleaner', '0.9.1'
+  gem 'database_cleaner', '1.6.1'
 
   gem 'simplecov-rcov', '0.2.3'
   gem 'ci_reporter', '1.8.4'

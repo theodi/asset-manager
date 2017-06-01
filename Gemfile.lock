@@ -49,7 +49,7 @@ GEM
       builder (>= 2.1.2)
     coderay (1.1.1)
     daemons (1.2.4)
-    database_cleaner (0.9.1)
+    database_cleaner (1.6.1)
     delayed_job (3.0.5)
       activesupport (~> 3.0)
     delayed_job_mongoid (1.1.0)
@@ -349,7 +349,7 @@ DEPENDENCIES
   carrierwave
   carrierwave-mongoid (= 0.2.1)
   ci_reporter (= 1.8.4)
-  database_cleaner (= 0.9.1)
+  database_cleaner (= 1.6.1)
   delayed_job (= 3.0.5)
   delayed_job_mongoid (= 1.1.0)
   dotenv-rails
