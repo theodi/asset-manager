@@ -16,7 +16,7 @@ gem 'exception_notification', '2.6.1'
 gem 'aws-ses', '0.4.4', :require => 'aws/ses'
 
 gem 'carrierwave'
-gem 'carrierwave-mongoid', '0.2.1', :require => 'carrierwave/mongoid'
+gem 'carrierwave-mongoid', '0.2.2', :require => 'carrierwave/mongoid'
 gem 'fog', '>= 1.16.0'
 
 gem 'state_machine', '1.1.2'
