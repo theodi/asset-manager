@@ -12,7 +12,7 @@ gem 'dotenv-rails'
 gem 'foreman', '< 0.84.0'
 gem 'thin'
 
-gem 'exception_notification', '2.6.1'
+gem 'exception_notification', '4.1.1'
 gem 'aws-ses', '0.6.0', :require => 'aws/ses'
 
 gem 'carrierwave'
