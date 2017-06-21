@@ -9,17 +9,14 @@ gem 'bson_ext', '1.6.4'
 
 gem 'dotenv-rails'
 
-gem 'foreman', '< 0.65.0'
+gem 'foreman', '< 0.84.0'
 gem 'thin'
 
-gem 'exception_notification', '2.6.1'
-gem 'aws-ses', '0.4.4', :require => 'aws/ses'
-
 gem 'carrierwave'
-gem 'carrierwave-mongoid', '0.2.1', :require => 'carrierwave/mongoid'
+gem 'carrierwave-mongoid', '0.2.2', :require => 'carrierwave/mongoid'
 gem 'fog', '>= 1.16.0'
 
-gem 'state_machine', '1.1.2'
+gem 'state_machine', '1.2.0'
 
 gem 'delayed_job', '3.0.5'
 gem 'delayed_job_mongoid', '1.1.0'
@@ -32,7 +29,7 @@ else
   gem 'gds-sso', '3.0.5'
 end
 
-gem 'plek', '1.4.0'
+gem 'plek', '2.0.0'
 
 group :assets do
   gem 'uglifier', '>= 3.2.0'
