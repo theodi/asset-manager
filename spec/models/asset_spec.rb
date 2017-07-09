@@ -117,12 +117,6 @@ describe Asset do
         @asset.state.should == 'infected'
       end
 
-      it "should send an exception notification" do
-        ExceptionNotifier::Notifier.should_receive(:background_exception_notification).
-          with(VirusScanner::InfectedFile.new, :data => {:virus_info => "/path/to/file: Eicar-Test-Signature FOUND"})
-
-        @asset.scan_for_viruses
-      end
     end
 
     context "when there is an error scanning" do
@@ -140,16 +134,6 @@ describe Asset do
         @asset.state.should == "unscanned"
       end
 
-      it "should send an exception notification" do
-        ExceptionNotifier::Notifier.should_receive(:background_exception_notification).
-          with(@error)
-
-        begin
-          @asset.scan_for_viruses
-        rescue VirusScanner::Error
-          # Swallow the passed through exception
-        end
-      end
     end
   end
 end
