@@ -14,7 +14,7 @@ gem 'thin'
 
 gem 'carrierwave'
 gem 'carrierwave-mongoid', '0.2.2', :require => 'carrierwave/mongoid'
-gem 'fog', '>= 1.16.0'
+gem 'fog', '>= 1.41.0'
 
 gem 'state_machine', '1.2.0'
 
