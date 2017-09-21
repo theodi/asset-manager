@@ -40,7 +40,7 @@ group :development, :test do
   gem 'database_cleaner', '0.9.1'
 
   gem 'simplecov-rcov', '0.2.3'
-  gem 'ci_reporter', '1.8.4'
+  gem 'ci_reporter', '= 2.0.0'
 
   gem "factory_girl_rails", "~> 4.0"
   gem "pry"
