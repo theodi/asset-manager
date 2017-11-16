@@ -40,7 +40,7 @@ GEM
     carrierwave-mongoid (0.2.2)
       carrierwave (~> 0.6.1)
       mongoid (~> 2.1)
-    ci_reporter (1.8.4)
+    ci_reporter (2.0.0)
       builder (>= 2.1.2)
     coderay (1.1.2)
     daemons (1.2.4)
@@ -356,7 +356,7 @@ DEPENDENCIES
   bson_ext (= 1.6.4)
   carrierwave
   carrierwave-mongoid (= 0.2.2)
-  ci_reporter (= 1.8.4)
+  ci_reporter (= 2.0.0)
   database_cleaner (= 0.9.1)
   delayed_job (= 3.0.5)
   delayed_job_mongoid (= 1.1.0)
