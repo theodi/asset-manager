@@ -26,7 +26,7 @@ gem 'mini_magick'
 if ENV['BUNDLE_DEV']
   gem 'gds-sso', path: '../gds-sso'
 else
-  gem 'gds-sso', '3.0.5'
+  gem 'gds-sso', '= 12.1.0'
 end
 
 gem 'plek', '2.0.0'
