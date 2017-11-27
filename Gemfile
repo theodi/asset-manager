@@ -3,9 +3,9 @@ source 'https://rubygems.org'
 ruby "1.9.3"
 
 gem 'rails', '~> 3.2.16'
-gem 'mongoid', '2.4.12'
+gem 'mongoid', '2.8.1'
 gem 'mongoid_spacial'
-gem 'bson_ext', '1.6.4'
+gem 'bson_ext', '1.12.5'
 
 gem 'dotenv-rails'
 
